@@ -12,10 +12,10 @@ public class Vehiculo {
 
   static int CantidadVehiculos;
 
-  Vehiculo(){
+  public Vehiculo(){
     this("",0,0,"",0,0,"",null);
   }
-  Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, float precio, float peso, String traccion, Fabricante fabricante){
+  public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, float precio, float peso, String traccion, Fabricante fabricante){
     this.placa = placa;
     this.puertas = puertas;
     this.velocidadMaxima = velocidadMaxima;

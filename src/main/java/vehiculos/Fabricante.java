@@ -6,11 +6,11 @@ public class Fabricante {
   static ArrayList<String> listado = new ArrayList<>();
   String nombre;
   Pais pais;
-  Fabricante(){
+  public Fabricante(){
     this("", null);
   }
 
-  Fabricante(String nombre, Pais pais){
+  public Fabricante(String nombre, Pais pais){
     this.nombre = nombre;
     this.pais = pais;
     listado.add(this.nombre);

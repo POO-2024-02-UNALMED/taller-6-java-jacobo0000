@@ -5,11 +5,11 @@ import java.util.List;
 public class Pais {
   String nombre;
 
-  Pais(){
+  public Pais(){
     this("");
   }
 
-  Pais(String nombre){
+  public Pais(String nombre){
     this.nombre = nombre;
   }
 

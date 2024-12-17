@@ -1,9 +1,6 @@
 package vehiculos;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Fabricante {
-  static ArrayList<String> listado = new ArrayList<>();
   String nombre;
   Pais pais;
   public Fabricante(){
@@ -13,19 +10,18 @@ public class Fabricante {
   public Fabricante(String nombre, Pais pais){
     this.nombre = nombre;
     this.pais = pais;
-    listado.add(this.nombre);
   }
 
-  public static String fabricaMayorVentas(List<Vehiculo> vehiculos) {
-    String fabricaMaxVentas = "";
+  public static Fabricante fabricaMayorVentas() {
+    Fabricante fabricaMaxVentas = null;
     int maxVentas = 0;
 
-    for (Vehiculo v1 : vehiculos) {
-        String fabricaActual = v1.getFabricante().getNombre();
+    for (Vehiculo v1 : Vehiculo.listado) {
+        Fabricante fabricaActual = v1.getFabricante();
         int contador = 0;
 
-        for (Vehiculo v2 : vehiculos) {
-            if (v2.getFabricante().getNombre().equals(fabricaActual)) {
+        for (Vehiculo v2 : Vehiculo.listado) {
+            if (v2.getFabricante().equals(fabricaActual)) {
                 contador++;
             }
         }

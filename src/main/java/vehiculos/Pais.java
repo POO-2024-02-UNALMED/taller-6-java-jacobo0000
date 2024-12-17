@@ -1,7 +1,5 @@
 package vehiculos;
 
-import java.util.List;
-
 public class Pais {
   String nombre;
 
@@ -13,16 +11,16 @@ public class Pais {
     this.nombre = nombre;
   }
 
-  public static String paisMasVendedor(List<Vehiculo> vehiculos) {
-    String paisMaxVentas = "";
+  public static Pais paisMasVendedor() {
+    Pais paisMaxVentas = null;
     int maxVentas = 0;
 
-    for (Vehiculo v1 : vehiculos) {
-        String paisActual = v1.getFabricante().getPais().getNombre();
+    for (Vehiculo v1 : Vehiculo.listado) {
+        Pais paisActual = v1.getFabricante().getPais();
         int contador = 0;
 
-        for (Vehiculo v2 : vehiculos) {
-            if (v2.getFabricante().getPais().getNombre().equals(paisActual)) {
+        for (Vehiculo v2 : Vehiculo.listado) {
+            if (v2.getFabricante().getPais().equals(paisActual)) {
                 contador++;
             }
         }
